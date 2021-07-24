@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/white"
+  tools:context=".MainActivity">
+
+  <TextView
+      android:id="@+id/header"
+      style="@style/TextAppearance.AppCompat.Subhead"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="15dp"
+      android:text=" It Time To Show Your Might"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <androidx.constraintlayout.utils.widget.ImageFilterView
+      android:id="@+id/Header"
+      android:layout_width="match_parent"
+      android:layout_height="200dp"
+      android:layout_marginTop="15dp"
+      android:scaleType="centerCrop"
+      android:src="@drawable/img_header"
+      app:layout_constraintTop_toBottomOf="@id/header" />
+
+  <androidx.constraintlayout.utils.widget.ImageFilterView
+      android:id="@+id/playerA"
+      android:layout_width="150dp"
+      android:layout_height="150dp"
+      android:layout_margin="15dp"
+      android:src="@drawable/img_archer"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/Header" />
+
+  <androidx.constraintlayout.utils.widget.ImageFilterView
+    android:id="@+id/playerB"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:layout_margin="15dp"
+    android:src="@drawable/img_archer"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/Header" />
+
+  <Button
+      android:id="@+id/ButtonPlayerA"
+      android:layout_width="150dp"
+      android:layout_height="wrap_content"
+      android:backgroundTint="#D5D5D5"
+      android:clickable="false"
+      android:text="Player A"
+      android:textColor="@color/black"
+      app:layout_constraintEnd_toEndOf="@id/playerA"
+      app:layout_constraintStart_toStartOf="@id/playerA"
+      app:layout_constraintTop_toBottomOf="@id/playerA" />
+
+  <Button
+      android:id="@+id/buttonPlayerB"
+      android:layout_width="150dp"
+      android:layout_height="wrap_content"
+      android:backgroundTint="#D5D5D5"
+      android:clickable="false"
+      android:text="Player B"
+      android:textColor="@color/black"
+      app:layout_constraintEnd_toEndOf="@id/playerB"
+      app:layout_constraintStart_toStartOf="@id/playerB"
+      app:layout_constraintTop_toBottomOf="@id/playerB" />
+
+  <androidx.constraintlayout.utils.widget.ImageFilterView
+    android:id="@+id/winnerA"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:src="@drawable/img_winner"
+    android:visibility="invisible"
+    app:layout_constraintEnd_toEndOf="@id/playerA"
+    app:layout_constraintStart_toStartOf="@id/playerA"
+    app:layout_constraintTop_toBottomOf="@id/ButtonPlayerA" />
+
+  <androidx.constraintlayout.utils.widget.ImageFilterView
+    android:id="@+id/winnerB"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:src="@drawable/img_winner"
+    android:visibility="invisible"
+    app:layout_constraintEnd_toEndOf="@id/playerB"
+    app:layout_constraintStart_toStartOf="@id/playerB"
+    app:layout_constraintTop_toBottomOf="@id/buttonPlayerB" />
+
+  <Button
+      android:id="@+id/buttonFight"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="28dp"
+      android:text="FIGHT"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/winnerA" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
